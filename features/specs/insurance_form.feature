@@ -1,38 +1,38 @@
-     #language: pt
+     #language
      
      @e2e
      @regression
-     Funcionalidade: Preencher formulário do seguro de veículo
-     Como um usuário da aplicação de seguros
-     Quero preencher um formulário de seguro
-     Para poder garantir o seguro do veículo
+     Feature: Fill Vehicle Insurance Form
+     As an insurance application user
+     I want to fill out an insurance form
+     So that I can secure the vehicle insurance
 
      
      @automobile
-     Cenário: Preencher o formulário do automovel com sucesso
-     Dado que acesso a página do formulário
-     Quando preencho todos os campos obrigatórios do automovel
-     Então o website envia o email de confirmação
+     Scenario: Fill out automobile form successfully
+     Given I access the form page
+     When I fill out all the required fields for the automobile
+     Then the website sends a confirmation email
 
 
      @smoke_test
      @truck
-     Cenário: Preencher o formulário do caminhão com sucesso
-     Dado que acesso a página do formulário
-     Quando preencho todos os campos obrigatórios do caminhão
-     Então o website envia o email de confirmação
+     Scenario: Fill out truck form successfully
+     Given I access the form page
+     When I fill out all the required fields for the truck
+     Then the website sends a confirmation email
 
 
      @smoke_test
      @motorcycle
-     Cenário: Preencher o formulário da moto com sucesso
-     Dado que acesso a página do formulário
-     Quando preencho todos os campos obrigatórios da motorcycle
-     Então o website envia o email de confirmação
+     Scenario: Fill out motorcycle form successfully
+     Given I access the form page
+     When I fill out all the required fields for the motorcycle
+     Then the website sends a confirmation email
 
-     
+
      @camper
-     Cenário: Preencher o formulário do camper com sucesso
-     Dado que acesso a página do formulário
-     Quando preencho todos os campos obrigatórios do camper
-     Então o website envia o email de confirmação
+     Scenario: Fill out camper form successfully
+     Given I access the form page
+     When I fill out all the required fields for the camper
+     Then the website sends a confirmation email
