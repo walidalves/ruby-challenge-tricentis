@@ -250,7 +250,7 @@ class FormPage < SitePrism::Page
 
     def fill_form_with_data_quote_camper
         email.set generate_unique_email
-        username.set 'BinoAutobots'
+        username.set 'GoingMarry'
         password.set 'Teste159'
         confirm_password.set 'Teste159'
         btn_send_email.click
