@@ -50,8 +50,8 @@ class FormPage < SitePrism::Page
     element :username, '#username'
     element :password, '#password'
     element :confirm_password, '#confirmpassword'
-    element :send_email, '#sendemail'
-    element :msg_success, 'body > div.sweet-alert.showSweetAlert.visible > h2'
+    element :btn_send_email, '#sendemail'
+    element :msg_loaded, 'body > div.sweet-alert.showSweetAlert.visible > h2'
 
     def fill_form_with_data_vehicle_auto
         ini_automobile.click
@@ -95,7 +95,11 @@ class FormPage < SitePrism::Page
         btn_next_toquote.click
     end
     
-    def fill_form_with_data_quote
-
+    def fill_form_with_data_quote_auto
+        email.set 'teste@hotmail.com'
+        username.set 'GoldRoger'
+        password.set 'Teste159'
+        confirm_password.set 'Teste159'
+        btn_send_email.click
     end
 end
