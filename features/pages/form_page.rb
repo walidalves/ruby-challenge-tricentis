@@ -17,10 +17,8 @@ class FormPage < SitePrism::Page
     element :date_manufacture, '#dateofmanufacture'
     element :dropdown_seats, '#numberofseats'
     element :dropdown_fuel, '#fuel'
-
     element :payload, '#payload'
     element :total_weight, '#totalweight'
-
     element :list_price, '#listprice'
     element :annual_mileag, '#annualmileage'
     element :btn_next_todata, '#nextenterinsurantdata'
@@ -57,7 +55,7 @@ class FormPage < SitePrism::Page
     element :msg_loaded, 'body > div.sweet-alert.showSweetAlert.visible > h2'
     element :btn_ok_end, '.sa-confirm-button-container button.confirm'
 
-
+    #Automobile flow
     def fill_form_with_data_vehicle_auto
         ini_automobile.click
         select 'BMW', from: 'make'
@@ -107,25 +105,7 @@ class FormPage < SitePrism::Page
         btn_send_email.click
     end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    #Truck flow
     def fill_form_with_data_vehicle_truck
         ini_truck.click
         select 'Ford', from: 'make'
@@ -134,7 +114,7 @@ class FormPage < SitePrism::Page
         select '5', from: 'numberofseats'
         select 'Petrol', from: 'fuel'
         payload.set Faker::Base.rand(1..1000).to_s
-        total_weigh.set Faker::Base.rand(100..50000).to_s      
+        total_weight.set Faker::Base.rand(100..50000).to_s       
         list_price.set Faker::Base.rand(500..100000).to_s
         annual_mileag.set Faker::Base.rand(100..100000).to_s
         btn_next_todata.click
@@ -155,11 +135,9 @@ class FormPage < SitePrism::Page
     def fill_form_with_data_product_truck
         date_start.set generate_random_future_date
         select '25.000.000,00', from: 'insurancesum'
-        select 'Bonus 2', from: 'meritrating'
         select 'Partial Coverage', from: 'damageinsurance'
         checkbox_input = find('#EuroProtection')
         page.execute_script("arguments[0].click();", checkbox_input)
-        select 'Yes', from: 'courtesycar'
         btn_next_toprice.click
     end
     
