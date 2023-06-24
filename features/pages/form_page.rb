@@ -1,12 +1,23 @@
 class FormPage < SitePrism::Page
-    set_url '/101/app.php'
+    set_url '/101/index.php'
 
+    ##Initial Page to Form
+    element :ini_automobile, '#nav_automobile'
+    element :ini_truck, '#nav_truck'
+    element :ini_motorcycle, '#nav_motorcycle'
+    element :ini_camper, '#nav_camper'
+    
+ 
     ##Vehicle Data Tab
     element :dropdown_make, '#make'
     element :engine_performance, '#engineperformance'
     element :date_manufacture, '#dateofmanufacture'
     element :dropdown_seats, '#numberofseats'
     element :dropdown_fuel, '#fuel'
+
+    element :payload, '#payload'
+    element :total_weight, '#totalweight'
+
     element :list_price, '#listprice'
     element :annual_mileag, '#annualmileage'
     element :btn_next_todata, '#nextenterinsurantdata'
@@ -42,18 +53,19 @@ class FormPage < SitePrism::Page
     element :send_email, '#sendemail'
     element :msg_success, 'body > div.sweet-alert.showSweetAlert.visible > h2'
 
-    def fill_form_with_data_vehicle
+    def fill_form_with_data_vehicle_auto
+        ini_automobile.click
         select 'BMW', from: 'make'
         engine_performance.set '25'
         date_manufacture.set '05/05/2022'
         select '5', from: 'numberofseats'
         select 'Petrol', from: 'fuel'
-        list_price.set '25555'
+        list_price.set '25000'
         annual_mileag.set '3000'
         btn_next_todata.click
     end
 
-    def fill_form_with_data_insurant
+    def fill_form_with_data_insurant_auto
         first_name.set 'Walidson'
         last_name.set 'Arnouschwarzenegger'
         date_birth.set '04/23/1977'
@@ -65,13 +77,22 @@ class FormPage < SitePrism::Page
         btn_next_toproduct.click
     end
 
-
-    def fill_form_with_data_product
+    def fill_form_with_data_product_auto
+        date_start.set '05/31/2026'
+        select '25.000.000,00', from: 'insurancesum'
+        select 'Bonus 2', from: 'meritrating'
+        select 'Partial Coverage', from: 'damageinsurance'
+        checkbox_input = find('#EuroProtection')
+        page.execute_script("arguments[0].click();", checkbox_input)
+        select 'Yes', from: 'courtesycar'
+        btn_next_toprice.click
 
     end
     
-    def fill_form_with_data_price
-
+    def fill_form_with_data_price_auto
+        checkbox_input = find('#selectsilver')
+        page.execute_script("arguments[0].click();", checkbox_input)
+        btn_next_toquote.click
     end
     
     def fill_form_with_data_quote
