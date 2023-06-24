@@ -22,7 +22,6 @@
      Então o website envia o email de confirmação
 
      @motorcycle
-     @smoke_test
      Cenário: Preencher o formulário da moto com sucesso
      Dado que acesso a página do formulário
      Quando preencho todos os campos obrigatórios da motorcycle
@@ -31,7 +30,8 @@
 
 
      @camper
-     Cenário: Preencher o formulário com sucesso
+     @smoke_test
+     Cenário: Preencher o formulário do camper com sucesso
      Dado que acesso a página do formulário
-     Quando preencho todos os campos obrigatórios
+     Quando preencho todos os campos obrigatórios do camper
      Então o website envia o email de confirmação

@@ -9,8 +9,7 @@ class FormPage < SitePrism::Page
     element :ini_truck, '#nav_truck'
     element :ini_motorcycle, '#nav_motorcycle'
     element :ini_camper, '#nav_camper'
-    
- 
+
     ##Vehicle Data Tab
     element :dropdown_make, '#make'
     element :model, '#model'
@@ -207,64 +206,53 @@ class FormPage < SitePrism::Page
         btn_send_email.click
     end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-    def confirm_end_form
-        btn_ok_end.click 
+    ### Camper flow ###
+    def fill_form_with_data_vehicle_camper
+        ini_camper.click
+        select 'Volkswagen', from: 'make'
+        engine_performance.set Faker::Base.rand(1..2000).to_s
+        date_manufacture.set generate_random_past_date
+        select '5', from: 'numberofseats'
+        select 'Diesel', from: 'fuel'
+        payload.set Faker::Base.rand(1..1000).to_s
+        total_weight.set Faker::Base.rand(100..50000).to_s       
+        list_price.set Faker::Base.rand(500..100000).to_s
+        annual_mileag.set Faker::Base.rand(100..100000).to_s
+        btn_next_todata.click
     end
 
+    def fill_form_with_data_insurant_camper
+        first_name.set Faker::Name.first_name
+        last_name.set Faker::Name.last_name
+        date_birth.set generate_random_date_of_birth
+        select 'Brazil', from: 'country'
+        zip_code.set Faker::Base.numerify('######')
+        select 'Farmer', from: 'occupation'
+        checkbox_input = find('#bungeejumping')
+        page.execute_script("arguments[0].click();", checkbox_input)
+        btn_next_toproduct.click
+    end
 
-    
+    def fill_form_with_data_product_camper
+        date_start.set generate_random_future_date
+        select '25.000.000,00', from: 'insurancesum'
+        select 'Partial Coverage', from: 'damageinsurance'
+        checkbox_input = find('#EuroProtection')
+        page.execute_script("arguments[0].click();", checkbox_input)
+        btn_next_toprice.click
+    end
+
+    def fill_form_with_data_price_camper
+        checkbox_input = find('#selectsilver')
+        page.execute_script("arguments[0].click();", checkbox_input)
+        btn_next_toquote.click
+    end
+
+    def fill_form_with_data_quote_camper
+        email.set generate_unique_email
+        username.set 'BinoAutobots'
+        password.set 'Teste159'
+        confirm_password.set 'Teste159'
+        btn_send_email.click
+    end
 end
