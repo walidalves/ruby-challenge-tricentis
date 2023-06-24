@@ -52,6 +52,7 @@ class FormPage < SitePrism::Page
     element :confirm_password, '#confirmpassword'
     element :btn_send_email, '#sendemail'
     element :msg_loaded, 'body > div.sweet-alert.showSweetAlert.visible > h2'
+    element :btn_ok_end, '.sa-confirm-button-container button.confirm'
 
     def fill_form_with_data_vehicle_auto
         ini_automobile.click
@@ -101,5 +102,9 @@ class FormPage < SitePrism::Page
         password.set 'Teste159'
         confirm_password.set 'Teste159'
         btn_send_email.click
+    end
+
+    def confirm_end_form
+        btn_ok_end.click 
     end
 end
