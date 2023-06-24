@@ -16,22 +16,22 @@
      Então o website envia o email de confirmação
 
      @truck
-     @smoke_test
-     Cenário: Preencher o formulário com sucesso
+     Cenário: Preencher o formulário do caminhão com sucesso
      Dado que acesso a página do formulário
      Quando preencho todos os campos obrigatórios do caminhão
      Então o website envia o email de confirmação
 
-
-
      @motorcycle
-     Cenário: Preencher o formulário com sucesso
+     Cenário: Preencher o formulário da moto com sucesso
      Dado que acesso a página do formulário
-     Quando preencho todos os campos obrigatórios
+     Quando preencho todos os campos obrigatórios da motorcycle
      Então o website envia o email de confirmação
 
+
+
      @camper
-     Cenário: Preencher o formulário com sucesso
+     @smoke_test
+     Cenário: Preencher o formulário do camper com sucesso
      Dado que acesso a página do formulário
-     Quando preencho todos os campos obrigatórios
+     Quando preencho todos os campos obrigatórios do camper
      Então o website envia o email de confirmação

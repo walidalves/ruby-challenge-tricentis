@@ -1,4 +1,9 @@
 module DataHelper
+
+	# Last Button
+	def confirm_end_form
+        btn_ok_end.click 
+    end
 	# Generate random birthdates between 18 to 70 years old.
 	def generate_random_date_of_birth
 		start_date = Date.today - 70*365 # 70 years ago
@@ -26,6 +31,7 @@ module DataHelper
 		return formatted_date
 	end
 
+	# Generate random e-mail
 	def generate_unique_email
 		username = Faker::Internet.unique.username(specifier: 8)
 		email = "#{username}@#{'example.com'}"
