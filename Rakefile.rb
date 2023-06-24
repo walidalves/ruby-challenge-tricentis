@@ -10,3 +10,8 @@ desc 'Execute Form Tests'
 task :formulario_e2e do
   sh 'bundle exec cucumber -t @formulario_e2e'
 end
+
+desc 'Execute Form Tests'
+task :regression do
+  sh 'bundle exec cucumber -t @regression'
+end
