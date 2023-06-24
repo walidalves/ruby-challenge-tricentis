@@ -13,9 +13,12 @@ class FormPage < SitePrism::Page
  
     ##Vehicle Data Tab
     element :dropdown_make, '#make'
+    element :model, '#model'
+    element :cylinder_capacity, '#cylindercapacity'
     element :engine_performance, '#engineperformance'
     element :date_manufacture, '#dateofmanufacture'
     element :dropdown_seats, '#numberofseats'
+    element :dropdown_seats_moto, '#numberofseatsmotorcycle'
     element :dropdown_fuel, '#fuel'
     element :payload, '#payload'
     element :total_weight, '#totalweight'
@@ -55,7 +58,7 @@ class FormPage < SitePrism::Page
     element :msg_loaded, 'body > div.sweet-alert.showSweetAlert.visible > h2'
     element :btn_ok_end, '.sa-confirm-button-container button.confirm'
 
-    #Automobile flow
+    ### Automobile flow ###
     def fill_form_with_data_vehicle_auto
         ini_automobile.click
         select 'BMW', from: 'make'
@@ -98,14 +101,14 @@ class FormPage < SitePrism::Page
     end
     
     def fill_form_with_data_quote_auto
-        email.set Faker::Internet.email
-        username.set 'GoldRoger'
+        email.set generate_unique_email
+        username.set 'MegasXLR'
         password.set 'Teste159'
         confirm_password.set 'Teste159'
         btn_send_email.click
     end
 
-    #Truck flow
+    ### Truck flow ###
     def fill_form_with_data_vehicle_truck
         ini_truck.click
         select 'Ford', from: 'make'
@@ -148,8 +151,57 @@ class FormPage < SitePrism::Page
     end
     
     def fill_form_with_data_quote_truck
-        email.set Faker::Internet.email
-        username.set 'GoldRoger'
+        email.set generate_unique_email
+        username.set 'BinoAutobots'
+        password.set 'Teste159'
+        confirm_password.set 'Teste159'
+        btn_send_email.click
+    end
+
+    ### Motorcycle flow ###
+    def fill_form_with_data_vehicle_moto
+        ini_motorcycle.click
+        select 'Honda', from: 'make'
+        select 'Scooter', from: 'model'
+        cylinder_capacity.set Faker::Base.rand(1..2000).to_s
+        engine_performance.set Faker::Base.rand(1..2000).to_s
+        date_manufacture.set generate_random_past_date
+        select '2', from: 'numberofseatsmotorcycle'
+        list_price.set Faker::Base.rand(500..100000).to_s
+        annual_mileag.set Faker::Base.rand(100..100000).to_s
+        btn_next_todata.click
+    end
+
+    def fill_form_with_data_insurant_moto
+        first_name.set Faker::Name.first_name
+        last_name.set Faker::Name.last_name
+        date_birth.set generate_random_date_of_birth
+        select 'Brazil', from: 'country'
+        zip_code.set Faker::Base.numerify('######')
+        select 'Farmer', from: 'occupation'
+        checkbox_input = find('#bungeejumping')
+        page.execute_script("arguments[0].click();", checkbox_input)
+        btn_next_toproduct.click
+    end
+
+    def fill_form_with_data_product_moto
+        date_start.set generate_random_future_date
+        select '25.000.000,00', from: 'insurancesum'
+        select 'Partial Coverage', from: 'damageinsurance'
+        checkbox_input = find('#EuroProtection')
+        page.execute_script("arguments[0].click();", checkbox_input)
+        btn_next_toprice.click
+    end
+
+    def fill_form_with_data_price_moto
+        checkbox_input = find('#selectsilver')
+        page.execute_script("arguments[0].click();", checkbox_input)
+        btn_next_toquote.click
+    end
+
+    def fill_form_with_data_quote_moto
+        email.set generate_unique_email
+        username.set 'JohnnyCash'
         password.set 'Teste159'
         confirm_password.set 'Teste159'
         btn_send_email.click
@@ -160,6 +212,50 @@ class FormPage < SitePrism::Page
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
