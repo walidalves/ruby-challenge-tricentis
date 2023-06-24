@@ -1,4 +1,7 @@
+require_relative 'data_helper'
+
 class FormPage < SitePrism::Page
+    include DataHelper
     set_url '/101/index.php'
 
     ##Initial Page to Form
@@ -14,10 +17,8 @@ class FormPage < SitePrism::Page
     element :date_manufacture, '#dateofmanufacture'
     element :dropdown_seats, '#numberofseats'
     element :dropdown_fuel, '#fuel'
-
     element :payload, '#payload'
     element :total_weight, '#totalweight'
-
     element :list_price, '#listprice'
     element :annual_mileag, '#annualmileage'
     element :btn_next_todata, '#nextenterinsurantdata'
@@ -52,25 +53,27 @@ class FormPage < SitePrism::Page
     element :confirm_password, '#confirmpassword'
     element :btn_send_email, '#sendemail'
     element :msg_loaded, 'body > div.sweet-alert.showSweetAlert.visible > h2'
+    element :btn_ok_end, '.sa-confirm-button-container button.confirm'
 
+    #Automobile flow
     def fill_form_with_data_vehicle_auto
         ini_automobile.click
         select 'BMW', from: 'make'
-        engine_performance.set '25'
-        date_manufacture.set '05/05/2022'
+        engine_performance.set Faker::Base.rand(1..2000).to_s
+        date_manufacture.set generate_random_past_date
         select '5', from: 'numberofseats'
         select 'Petrol', from: 'fuel'
-        list_price.set '25000'
-        annual_mileag.set '3000'
+        list_price.set Faker::Base.rand(500..100000).to_s
+        annual_mileag.set Faker::Base.rand(100..100000).to_s
         btn_next_todata.click
     end
 
     def fill_form_with_data_insurant_auto
-        first_name.set 'Walidson'
-        last_name.set 'Arnouschwarzenegger'
-        date_birth.set '04/23/1977'
+        first_name.set Faker::Name.first_name
+        last_name.set Faker::Name.last_name
+        date_birth.set generate_random_date_of_birth
         select 'Brazil', from: 'country'
-        zip_code.set '1234566'
+        zip_code.set Faker::Base.numerify('######')
         select 'Farmer', from: 'occupation'
         checkbox_input = find('#bungeejumping')
         page.execute_script("arguments[0].click();", checkbox_input)
@@ -78,7 +81,7 @@ class FormPage < SitePrism::Page
     end
 
     def fill_form_with_data_product_auto
-        date_start.set '05/31/2026'
+        date_start.set generate_random_future_date
         select '25.000.000,00', from: 'insurancesum'
         select 'Bonus 2', from: 'meritrating'
         select 'Partial Coverage', from: 'damageinsurance'
@@ -86,7 +89,6 @@ class FormPage < SitePrism::Page
         page.execute_script("arguments[0].click();", checkbox_input)
         select 'Yes', from: 'courtesycar'
         btn_next_toprice.click
-
     end
     
     def fill_form_with_data_price_auto
@@ -96,10 +98,77 @@ class FormPage < SitePrism::Page
     end
     
     def fill_form_with_data_quote_auto
-        email.set 'teste@hotmail.com'
+        email.set Faker::Internet.email
         username.set 'GoldRoger'
         password.set 'Teste159'
         confirm_password.set 'Teste159'
         btn_send_email.click
     end
+
+    #Truck flow
+    def fill_form_with_data_vehicle_truck
+        ini_truck.click
+        select 'Ford', from: 'make'
+        engine_performance.set Faker::Base.rand(1..2000).to_s
+        date_manufacture.set generate_random_past_date
+        select '5', from: 'numberofseats'
+        select 'Petrol', from: 'fuel'
+        payload.set Faker::Base.rand(1..1000).to_s
+        total_weight.set Faker::Base.rand(100..50000).to_s       
+        list_price.set Faker::Base.rand(500..100000).to_s
+        annual_mileag.set Faker::Base.rand(100..100000).to_s
+        btn_next_todata.click
+    end
+
+    def fill_form_with_data_insurant_truck
+        first_name.set Faker::Name.first_name
+        last_name.set Faker::Name.last_name
+        date_birth.set generate_random_date_of_birth
+        select 'Brazil', from: 'country'
+        zip_code.set Faker::Base.numerify('######')
+        select 'Farmer', from: 'occupation'
+        checkbox_input = find('#bungeejumping')
+        page.execute_script("arguments[0].click();", checkbox_input)
+        btn_next_toproduct.click
+    end
+
+    def fill_form_with_data_product_truck
+        date_start.set generate_random_future_date
+        select '25.000.000,00', from: 'insurancesum'
+        select 'Partial Coverage', from: 'damageinsurance'
+        checkbox_input = find('#EuroProtection')
+        page.execute_script("arguments[0].click();", checkbox_input)
+        btn_next_toprice.click
+    end
+    
+    def fill_form_with_data_price_truck
+        checkbox_input = find('#selectsilver')
+        page.execute_script("arguments[0].click();", checkbox_input)
+        btn_next_toquote.click
+    end
+    
+    def fill_form_with_data_quote_truck
+        email.set Faker::Internet.email
+        username.set 'GoldRoger'
+        password.set 'Teste159'
+        confirm_password.set 'Teste159'
+        btn_send_email.click
+    end
+
+
+
+
+
+
+
+
+
+
+
+    def confirm_end_form
+        btn_ok_end.click 
+    end
+
+
+    
 end

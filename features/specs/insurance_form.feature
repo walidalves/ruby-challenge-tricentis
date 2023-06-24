@@ -8,24 +8,21 @@
      Para poder garantir o seguro do veículo
 
      
-     @smoke_test
+     
      @formulario_e2e
-     Cenário: Preencher o formulário com sucesso
+     Cenário: Preencher o formulário do automovel com sucesso
      Dado que acesso a página do formulário
-     Quando preencho todos os campos obrigatórios
-     Então o website envia o email de confirmação
-
-     @automobile
-     Cenário: Preencher o formulário com sucesso
-     Dado que acesso a página do formulário
-     Quando preencho todos os campos obrigatórios
+     Quando preencho todos os campos obrigatórios do automovel
      Então o website envia o email de confirmação
 
      @truck
+     @smoke_test
      Cenário: Preencher o formulário com sucesso
      Dado que acesso a página do formulário
-     Quando preencho todos os campos obrigatórios
+     Quando preencho todos os campos obrigatórios do caminhão
      Então o website envia o email de confirmação
+
+
 
      @motorcycle
      Cenário: Preencher o formulário com sucesso
