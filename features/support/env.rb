@@ -6,10 +6,12 @@ require 'httparty'
 require 'pry'
 require 'rake'
 
+## Register Selenium Driver
 Capybara.register_driver :site_prism do |app|
     Capybara::Selenium::Driver.new(app, browser: :chrome)
 end
 
+## Settings
 Capybara.configure do |config|
     config.run_server = false
     Capybara.default_driver = :site_prism
