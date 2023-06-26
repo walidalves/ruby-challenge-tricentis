@@ -1,5 +1,6 @@
 require 'cucumber'
 require 'cucumber/rake/task'
+require 'rubocop/rake_task'
 
 desc 'Execute complete e2e Form Tests'
 task :e2e do
