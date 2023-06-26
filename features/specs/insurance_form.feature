@@ -15,7 +15,7 @@
      Then the website sends a confirmation email
 
 
-     @smoke_test
+
      @truck
      Scenario: Fill out truck form successfully
      Given I access the form page
