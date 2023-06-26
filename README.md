@@ -35,7 +35,7 @@ rubocop --format html --out reports/rubocop_report.html
 <div style="display: inline_block" align="left"><br>
   <img align="right" alt="Walid-Ruby" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-plain.svg" />
 
-<h2>Gems documentation:</h2>h2>
+<h2>Gems documentation:</h2>
 
 Capybara: https://github.com/teamcapybara/capybara
 
