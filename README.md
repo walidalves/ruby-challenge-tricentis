@@ -1,7 +1,7 @@
 🌱Environment:
 
 - Ruby (version 3.2.2) with DevKit https://rubyinstaller.org/downloads/<div style="display: inline_block" align="left"><br>
-  <img align="center" alt="Walid-Ruby" height="20" width="30" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-plain.svg" /> </div> 
+  <img align="right" alt="Walid-Ruby" height="20" width="30" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-plain.svg" /> </div> https://github.com/walidalves/ruby-challenge-tricentis/blob/main/README.md
 
 - Bundler (gem install bundler)
 
@@ -21,4 +21,11 @@ In the PATH environment variable, include the path to the chromedriver folder (e
 
 3 - Open the terminal (from VSCode, or the one of your choice and navigate to the project folder) and run the command 'bundle install'
 
-4 - To run the scenarios, use the rake <name of tag>
+4 - To run the scenarios, use the rake >name of tag<
+
+Obs: For new tags, edit the Rakefile.rb.
+
+## Note 3:
+In this project there is Rubocop with all the rules enabled, it is interesting to do a treatment before starting to execute it.
+
+rubocop --format html --out reports/rubocop_report.html
