@@ -1,8 +1,8 @@
-🌱Environment:
+<h2>🌱Environment:</h2>
 <div style="display: inline_block" align="left"><br>
   <img align="right" alt="Walid-Ruby" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-plain.svg" />
 
-  - Ruby (version 3.2.2) with DevKit https://rubyinstaller.org/downloads/
+- Ruby (version 3.2.2) with DevKit https://rubyinstaller.org/downloads/
 
 - Bundler (gem install bundler)
 
@@ -29,7 +29,7 @@ Obs: For new tags, edit the Rakefile.rb.
 ## Note 3:
 In this project there is Rubocop with all the rules enabled, it is interesting to do a treatment before starting to execute it.
 
-<details><i>Run this code line to generate the Rubocop report</i>
+<i>Run this code line to generate the Rubocop report</i>
 ```sh
 rubocop --format html --out reports/rubocop_report.html
 ```
