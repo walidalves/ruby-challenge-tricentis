@@ -38,12 +38,22 @@ rubocop --format html --out reports/rubocop_report.html
 <h2>Gems documentation:</h2>h2>
 
 Capybara: https://github.com/teamcapybara/capybara
+
 Cucumber: https://cucumber.io/docs/cucumber/
+
 RSpec: https://rspec.info/documentation/
+
 Selenium WebDriver: https://www.selenium.dev/documentation/en/webdriver/
+
 Faker: https://github.com/faker-ruby/faker
+
 SitePrism: https://github.com/site-prism/site_prism
+
 HTTParty: https://github.com/jnunemaker/httparty
+
 Pry: https://github.com/pry/pry
+
 Rake: https://ruby.github.io/rake/
+
 Rubocop: https://docs.rubocop.org/
+
