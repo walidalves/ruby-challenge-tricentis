@@ -34,6 +34,7 @@ module DataHelper
 	# Generate random e-mail
 	def generate_unique_email
 		username = Faker::Internet.unique.username(specifier: 8)
+		username = username.gsub(/['"]/,'')
 		email = "#{username}@#{'example.com'}"
 		return email
 	end

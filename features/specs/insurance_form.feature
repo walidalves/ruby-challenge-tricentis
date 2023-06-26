@@ -2,6 +2,7 @@
      
      @e2e
      @regression
+     @contract
      Feature: Fill Vehicle Insurance Form
      As an insurance application user
      I want to fill out an insurance form
@@ -15,7 +16,7 @@
      Then the website sends a confirmation email
 
 
-
+     @smoke_test
      @truck
      Scenario: Fill out truck form successfully
      Given I access the form page

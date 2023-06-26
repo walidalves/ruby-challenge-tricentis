@@ -36,3 +36,8 @@ desc 'Execute Camper Form Tests'
 task :camper do
   sh 'bundle exec cucumber -t @camper'
 end
+
+desc 'Execute Contract Tests'
+task :contract do
+  sh 'bundle exec cucumber -t @contract'
+end
