@@ -1,4 +1,4 @@
-Quando('I fill out all the required fields for the motorcycle') do
+When('I fill out all the required fields for the motorcycle') do
     @form_page.fill_form_with_data_vehicle_moto
     @form_page.fill_form_with_data_insurant_moto
     @form_page.fill_form_with_data_product_moto
