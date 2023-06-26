@@ -1,7 +1,7 @@
 🌱Environment:
 
 - Ruby (version 3.2.2) with DevKit https://rubyinstaller.org/downloads/<div style="display: inline_block" align="left"><br>
-  <img align="right" alt="Walid-Ruby" height="20" width="30" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-plain.svg" /> </div> https://github.com/walidalves/ruby-challenge-tricentis/blob/main/README.md
+  <img align="right" alt="Walid-Ruby" height="20" width="30" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-plain.svg" />
 
 - Bundler (gem install bundler)
 
