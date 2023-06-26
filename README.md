@@ -29,10 +29,9 @@ Obs: For new tags, edit the Rakefile.rb.
 ## Note 3:
 In this project there is Rubocop with all the rules enabled, it is interesting to do a treatment before starting to execute it.
 
-<details><summary><i>Run this code line to generate the Rubocop report</i>
+<details><i>Run this code line to generate the Rubocop report</i>
 ```sh
 rubocop --format html --out reports/rubocop_report.html
 ```
-</summary>
 
 
