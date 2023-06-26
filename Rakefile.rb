@@ -1,5 +1,6 @@
 require 'cucumber'
 require 'cucumber/rake/task'
+require 'rubocop/rake_task'
 
 desc 'Execute complete e2e Form Tests'
 task :e2e do
@@ -34,4 +35,9 @@ end
 desc 'Execute Camper Form Tests'
 task :camper do
   sh 'bundle exec cucumber -t @camper'
+end
+
+desc 'Execute Contract Tests'
+task :contract do
+  sh 'bundle exec cucumber -t @contract'
 end

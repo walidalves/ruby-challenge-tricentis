@@ -2,6 +2,7 @@
      
      @e2e
      @regression
+     @contract
      Feature: Fill Vehicle Insurance Form
      As an insurance application user
      I want to fill out an insurance form
