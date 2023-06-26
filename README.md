@@ -1,5 +1,4 @@
-<h2>🌱Environment:</h2> <div style="display: inline_block" align="left"><br>
-  <img align="right" alt="Walid-Ruby" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-plain.svg" />
+<h2>🌱Environment:</h2> 
 
 - Ruby (version 3.2.2) with DevKit https://rubyinstaller.org/downloads/
 
@@ -33,4 +32,5 @@ In this project there is Rubocop with all the rules enabled, it is interesting t
 rubocop --format html --out reports/rubocop_report.html
 ```
 
-
+<div style="display: inline_block" align="left"><br>
+  <img align="right" alt="Walid-Ruby" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-plain.svg" />
